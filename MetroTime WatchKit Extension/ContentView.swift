@@ -39,7 +39,7 @@ struct ContentView: View {
                     .frame(width:50, height:50)
                     .background(Color.orange)
                 .padding(.trailing, -8.0)
-            Text("Steve")
+            Text("Spring")
                     .foregroundColor(Color.white)
                     .frame(width:50, height:50)
                     .background(Color.purple)
