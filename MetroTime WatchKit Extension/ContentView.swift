@@ -11,46 +11,43 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-        HStack {
+            HStack {
             Text("20:36")
-                .foregroundColor(Color.white)
-                .frame(width:50, height:50)
-                .background(Color.red)
-                .padding([.top, .bottom, .trailing])
+                    .foregroundColor(Color.white)
+                    .frame(width:50, height:50)
+                    .background(Color.red)
+                .padding(.trailing, -8.0)
             Text("Sun")
-                .foregroundColor(Color.white)
-                .frame(width:50, height:50)
-                .background(Color.green)
-                .padding(.trailing, -10.0)
-        }
-        .padding(-10.0)
+                    .foregroundColor(Color.black)
+                    .frame(width:50.0, height:50)
+                    .background(Color.green)
+            }
         HStack {
             Text("23rd")
-                .foregroundColor(Color.white)
-                .frame(width:50, height:50)
-                .background(Color.blue)
-                .padding([.top, .bottom, .trailing])
+                    .foregroundColor(Color.white)
+                    .frame(width:50, height:50)
+                    .background(Color.blue)
+                .padding(.trailing, -8.0)
             Text("March")
-                .foregroundColor(Color.black)
-                .frame(width:50, height:50)
-                .background(Color.yellow)
-                .padding(.trailing, -10.0)
+                    .foregroundColor(Color.black)
+                    .frame(width:50, height:50)
+                    .background(Color.yellow)
             }
-
             HStack {
-            Text("2020")
-                .foregroundColor(Color.black)
-                .frame(width:50, height:50)
-                .background(Color.orange)
-                .padding([.top, .bottom, .trailing])
+                Text("2020")
+                    .foregroundColor(Color.black)
+                    .frame(width:50, height:50)
+                    .background(Color.orange)
+                .padding(.trailing, -8.0)
             Text("Steve")
-                .foregroundColor(Color.white)
-                .frame(width:50, height:50)
-                .background(Color.purple)
-                .padding(.trailing, -10.0)
+                    .foregroundColor(Color.white)
+                    .frame(width:50, height:50)
+                    .background(Color.purple)
             }
-            .padding(-10.0)
         }
+        .frame(width: nil, height: nil)
+        .padding(.all)
+        .background(Color.white)
     }
 }
 
