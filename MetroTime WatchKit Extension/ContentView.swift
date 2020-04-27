@@ -17,13 +17,14 @@ struct ContentView: View {
     @State var myWeekday = 0
     @State var weekDayText = ""
     @State var myYear = 0
-    @State var components = Calendar.current.dateComponents([.day, .month, .hour, .minute, .second, .year], from: Date())
+    @State var components = Calendar.current.dateComponents([.day, .month, .hour, .minute, .second, .weekday, .year], from: Date())
     
     // timer to update dispaly
     var updateTimer: Timer {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {
             _ in self.components = Calendar.current.dateComponents([.day, .month, .hour, .minute, .second, .weekday, .year], from: Date())
             self.myHour = self.components.hour ?? 0
+            self.myMinute = self.components.minute ?? 0
             self.mySecond = self.components.second ?? 0
             self.myMonth = self.components.month ?? 0
             self.myDay = self.components.day ?? 0
@@ -96,18 +97,18 @@ struct ContentView: View {
                 case 7:
                     return "Sat"
                 default:
-                    return "BlurDay"
+                    return "Day"
                 }
             }
         
     var body: some View {
         VStack {
             HStack {
-            Text("20:36")
+                Text("\(myHour):\(myMinute)")
                     .foregroundColor(Color.white)
                     .frame(width:50, height:50)
                     .background(Color.red)
-                .padding(.trailing, -8.0)
+                    .padding(.trailing, -8.0)
             Text("\(self.lookupDayofWeek(myWeekday: self.myWeekday))")
                     .foregroundColor(Color.black)
                     .frame(width:50.0, height:50)
@@ -118,18 +119,18 @@ struct ContentView: View {
                     .foregroundColor(Color.white)
                     .frame(width:50, height:50)
                     .background(Color.blue)
-                .padding(.trailing, -8.0)
+                    .padding(.trailing, -8.0)
             Text("\(self.lookupMonth(myMonth: self.myMonth))")
                     .foregroundColor(Color.black)
                     .frame(width:50, height:50)
                     .background(Color.yellow)
             }
             HStack {
-                Text("2020")
+            Text("\(self.myYear.description)")
                     .foregroundColor(Color.black)
                     .frame(width:50, height:50)
                     .background(Color.orange)
-                .padding(.trailing, -8.0)
+                    .padding(.trailing, -8.0)
             Text("Spring")
                     .foregroundColor(Color.white)
                     .frame(width:50, height:50)
